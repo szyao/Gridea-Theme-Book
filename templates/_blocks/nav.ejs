@@ -1,0 +1,17 @@
+<div class="nav-box">
+  <div class="nav-z"></div>
+  <nav id="nav-menu" class="clearfix" role="navigation">
+    <% menus.forEach(function(menu) { %>
+      <% if (menu.openType === 'External') { %>
+        <a pajx-right  class="current" href="<%= menu.link %>"  target="_blank">
+          <%= menu.name %><span></span>
+        </a>
+      <% } else { %>
+        <a pajx-right  class="current" href="<%= menu.link %>">
+          <%= menu.name %><span></span>
+        </a>
+      <% } %>
+    <% }); %>
+    <div class="page-s"></div>
+  </nav>
+</div>

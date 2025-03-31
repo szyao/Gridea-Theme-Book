@@ -1,0 +1,68 @@
+
+  <% if (site.customConfig.image) { %>
+    <div id="Book-cover"  style="background-image: '<%= site.customConfig.image %>';">
+  <% } else { %>
+    <div id="Book-cover">
+  <% } %>
+  <div class="Book-cover-c"></div>
+  <div id="Book-cover-name">
+    <%= themeConfig.siteName %>
+  </div>
+  <div id="Book-cover-author">
+    <%= site.customConfig.auther %>◎著
+  </div>
+  <div id="Book-cover-girdle">
+    <div class="Book-cover-description">
+      -<%= site.customConfig.tapes %>-
+    </div>
+  </div>
+  <div id="Publishing-house">
+    <%= site.customConfig.publish %>
+  </div>
+  <div class="Book-cover-customize-01"></div>
+  <div class="Book-cover-customize-02"></div>
+  <div class="Book-cover-customize-02"></div>
+</div>
+
+<div class="book-left-z">
+  <!-- 目录 -->
+  <div class="kit-hidden-tb" id="secondary" role="complementary">
+    <article class="post">
+      <div class="post-content-pages">
+        <div id="archives">
+          <% let years=[]; site.posts.forEach((item)=> { const year = item.date.substring(0, 4); if
+            (!years.includes(year)) { years.push(year); } }); %>
+            <% years.forEach(function(year) { %>
+              <div class="al_year">
+                <%- year %>年<br /><span class="al_age">&nbsp;<span>
+              </div>
+              <ul class="al_mon_list">
+                <% site.posts.forEach(function(post) { %>
+                  <%if (post.date.indexOf(year) !==-1) { %>
+                    <li><a href="<%= post.link %>">
+                        <%= post.title %>
+                      </a>
+                      <span>
+                        <%= post.date.substring(5, 10)%>
+                      </span>
+                    </li>
+                    <% }; %>
+                      <% }); %>
+              </ul>
+              <% }); %>
+        </div>
+      </div>
+    </article>
+    <script>
+      if (ismMobile()) {
+        $(".al_mon_list").find("a").click(function () { $("#book-left").css({ "margin-left": "-100%" }) })
+      } else {
+        $("#archives").find("a").attr("pajx-right", "");
+        var ps = new PerfectScrollbar('#secondary', { wheelSpeed: 0.5, swipeEasing: false, suppressScrollX: false });
+        $(".al_mon_list").find("a").click(function () { catalogClickList(this) })
+      }
+    </script>
+  </div>
+  <!-- end #catalog -->
+</div>
+<div class="book-shadow"></div>
