@@ -40,46 +40,53 @@
           <div id="book-right">
             <!--书签 -->
             <%- include('./_blocks/nav') %>
-            <!-- 主题内容，请修改以下内容 -->
-            <div id="axjx_box">
-              <div id="postbox">
-                <div class="site-name">
-                  <div id="logo">
-                    <%- site.customConfig.auther %>
-                  </div>
-                  <p class="description"> -<%- themeConfig.siteDescription %>- </p>
-                </div>
-                <!--评论位置-->
-              </div>
-              <!-- 主题内容，请修改以上内容 -->
-              <!-- 自适应手机-->
-              <script>
-                function checkScreenWidth() {
-                    var divElement = document.getElementById('book-left');
-                    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-                    divElement.style.display = 'block';
-                }
-                // 初始检查屏幕宽度
-                checkScreenWidth();
-              </script>
-            </div>
-            <div class="book-shadow"></div>
-          </div>
-          <% if (site.customConfig.open) { %>
-            <script>
-              var openbooktime = 1000; //自动打开书本延迟。单位为毫秒。
-              var openbookset = setTimeout(function () {
-                openBook();
-              }, openbooktime);
-            </script>
-          <% } %>
-          <!-- 自动打开 #main-->
-        </div>
-        <!-- end #mians -->
-      </div>
-      <!-- end #body -->
+              <div id="axjx_box">
+                <div id="axjx_box2">
+                  <!-- 主题内容，请修改以下内容 -->
+                  <div id="postbox">
+                    <!-- 文章 -->
+                    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                      <h1 class="post-title" itemprop="name headline">
+                        留言板
+                      </h1>
+                      <ul class="post-meta">
+                        <li><a pajx-right id="home" class="current" href="/">
+                            <svg t="1743164938638" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                              xmlns="http://www.w3.org/2000/svg" p-id="4889" width="20" height="20">
+                              <path
+                                d="M149.333333 960a85.333333 85.333333 0 0 1-85.333333-85.333333V331.221333a85.333333 85.333333 0 0 1 48.64-77.056l362.666667-172.693333a85.333333 85.333333 0 0 1 73.386666 0l362.666667 172.693333A85.333333 85.333333 0 0 1 960 331.221333V874.666667a85.333333 85.333333 0 0 1-85.333333 85.333333H149.333333zM505.386667 138.24l-2.56 1.024-362.666667 172.693333a21.333333 21.333333 0 0 0-11.989333 16.554667L128 331.221333V874.666667a21.333333 21.333333 0 0 0 18.837333 21.184L149.333333 896h192V661.333333a85.333333 85.333333 0 0 1 85.333334-85.333333h170.666666a85.333333 85.333333 0 0 1 85.333334 85.333333v234.666667h192a21.333333 21.333333 0 0 0 21.184-18.837333L896 874.666667V331.221333a21.333333 21.333333 0 0 0-9.792-17.941333l-2.368-1.322667-362.666667-172.693333a21.333333 21.333333 0 0 0-15.786666-1.024zM597.333333 640h-170.666666a21.333333 21.333333 0 0 0-21.184 18.837333L405.333333 661.333333v234.666667h213.333334V661.333333a21.333333 21.333333 0 0 0-18.837334-21.184L597.333333 640z"
+                                fill="#009999" p-id="4890"></path>
+                            </svg>
+                          </a></li>
+                        <li>⇨
+                        </li>
+                      </ul>
+                    </article>
+                    <!-- 文章end -->
+                  <!-- 主题内容，请修改以上内容 -->
+                  <!-- 右侧进度条 -->
+                  <div id="rightSchedule"></div>
+                  <script>
+                    if(ismMobile()){
+                      $("#book-left").css({"margin-left":"-100%"})
+                    }else{
+                      $("#category").children("a").attr("pajx-left", "");
+                      $(".tags").children("a").attr("pajx-left", "");
+                      openBook("withOutAnimat");
+                      var ps = new PerfectScrollbar('#postbox', {wheelSpeed: 0.5,swipeEasing: false,suppressScrollX: false});
+                    }
+                    if ($("#post_box").height()  > 800) {rightSchedule();};
+                    var img = $(".post-content").find("img");
+                    if (img.length > 0) {imgStyle(img);img.click(function () {imgbig(this);});};
+                  </script>
+                </div><!--axjx_box2 end-->
+              </div><!--axjx_box end-->
+              <div class="book-shadow"></div>
+          </div><!--book-right end-->
+          
+        </div><!--mains end-->
+      </div><!--body end-->
       <%- include('./_blocks/footer') %>
-    </div>
-    <!-- end #body-bg -->
+    </div><!--body-bg end-->
   </body>
 </html>

@@ -20,7 +20,6 @@
   <link rel="shortcut icon" href="/media/img/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="<%= themeConfig.domain %>/styles/main.css">
 
-  评论系统
   <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
     <% if (commentSetting.commentPlatform === 'gitalk') { %>
       <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
@@ -30,9 +29,8 @@
       <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
     <% } %>
   <% } %>
-
-  <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
   <!-- Google id  -->
   <% if (site.customConfig.ga) { %>

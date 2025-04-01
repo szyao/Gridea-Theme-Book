@@ -46,7 +46,7 @@
                 <!-- 小屏内容 -->
                 <article class="post">
                   <h1 class="post-title" itemprop="name headline">
-                    <%= themeConfig.siteName %>
+                    《<%= themeConfig.siteName %>》
                   </h1>
                   <div class="post-content-pages-right">
                     <div id="archives">
@@ -59,7 +59,7 @@
                           <ul class="al_mon_list">
                             <% site.posts.forEach(function(post) { %>
                               <%if (post.date.indexOf(year) !==-1) { %>
-                                <li><a href="<%= post.link %>">
+                                <li><a pajx-right href="<%= post.link %>">
                                     <%= post.title %>
                                   </a>
                                   <span>
