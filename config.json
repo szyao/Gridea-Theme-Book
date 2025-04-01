@@ -6,7 +6,7 @@
     {
       "name": "auther",
       "label": "作者",
-      "group": "book",
+      "group": "封面设置",
       "value": "作者名称",
       "type": "input",
       "note": "作者名称"
@@ -14,7 +14,7 @@
     {
       "name": "tapes",
       "label": "腰封",
-      "group": "book",
+      "group": "封面设置",
       "value": "腰封文字",
       "type": "input",
       "note": "腰封文字"
@@ -22,7 +22,7 @@
     {
       "name": "publish",
       "label": "出版社",
-      "group": "book",
+      "group": "封面设置",
       "value": "出版社",
       "type": "input",
       "note": "出版社名称"
@@ -30,7 +30,7 @@
     {
       "name": "image",
       "label": "封面图片",
-      "group": "book",
+      "group": "封面设置",
       "value": "/media/img/book.png",
       "type": "input",
       "note": "默认：/media/img/book.png"
@@ -38,7 +38,7 @@
     {
       "name": "open",
       "label": "自动打开书本",
-      "group": "book",
+      "group": "封面设置",
       "value": true,
       "type": "switch"
     },
