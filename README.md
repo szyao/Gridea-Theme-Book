@@ -3,12 +3,16 @@
 👍 Simply download this project to your local Gridea theme folder (usually .\Documents\Gridea\themes\).
 👍只需将此项目下载到本地的Gridea主题文件夹（\Documents\Gridea\themes）。
 
-- 这是一个有趣的主题，需要1200*900px才能获得完整体验
-- 自适应主题，也适配手机
-- 无评论系统
-- 纯文字主题，无分类，无标签
-- 纯纯适合写个日记啥的
-- todo： 是否更新看心情
+
+
+
+- 这是一款非常有意思的书籍拟物主题，适配Gridea静态博客。
+- 适合用于记录文字
+- 主题的完整效果要求窗口尺寸大于1200*900px
+- 主题改自typecho主题Book，（原作者为零九：https://零九.com），
+- 目前已适配手机，暂无评论系统。
+- 以文字为主导的主题
+- 仓库地址： https://github.com/szyao/Gridea-Theme-Book
 
 # Preview
 
@@ -16,8 +20,6 @@ Homepage
 
 ![](assets/media/img/home.jpeg)
 
-
 Homepage(Open Book)
-
 
 ![](assets/media/img/home-open.jpeg)
