@@ -28,12 +28,12 @@
       "note": "出版社名称"
     },
     {
-      "name": "image",
-      "label": "封面图片",
+      "name": "beian",
+      "label": "备案号",
       "group": "封面设置",
-      "value": "/media/img/book.png",
+      "value": "苏ICP备*****号",
       "type": "input",
-      "note": "默认：/media/img/book.png"
+      "note": "备案号"
     },
     {
       "name": "open",
