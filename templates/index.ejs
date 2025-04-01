@@ -48,6 +48,12 @@
                   <h1 class="post-title" itemprop="name headline">
                     《<%= themeConfig.siteName %>》
                   </h1>
+                  <ul class="post-meta">
+                    <li><a pajx-right class="current" href="/comment"> 留言板
+                    </a></li>                    
+                    <li><a pajx-right id="home" class="current" href="/">首页
+                      </a></li>
+                  </ul>
                   <div class="post-content-pages-right">
                     <div id="archives">
                       <% let years=[]; site.posts.forEach((item)=> { const year = item.date.substring(0, 4); if

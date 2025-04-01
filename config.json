@@ -45,10 +45,18 @@
     {
       "name": "ga",
       "label": "跟踪 ID",
-      "group": "谷歌统计",
+      "group": "其他",
       "value": "",
       "type": "input",
       "note": "UA-xxxxxxxxx-x"
+    },
+    {
+      "name": "twikoo",
+      "label": "评论：twikoo ID",
+      "group": "其他",
+      "value": "",
+      "type": "input",
+      "note": "例如：https://xxx.vercel.app"
     }
   ]
 }

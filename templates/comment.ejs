@@ -50,28 +50,27 @@
                         留言板
                       </h1>
                       <ul class="post-meta">
-                        <li><a pajx-right id="home" class="current" href="/">
-                            <svg t="1743164938638" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                              xmlns="http://www.w3.org/2000/svg" p-id="4889" width="20" height="20">
-                              <path
-                                d="M149.333333 960a85.333333 85.333333 0 0 1-85.333333-85.333333V331.221333a85.333333 85.333333 0 0 1 48.64-77.056l362.666667-172.693333a85.333333 85.333333 0 0 1 73.386666 0l362.666667 172.693333A85.333333 85.333333 0 0 1 960 331.221333V874.666667a85.333333 85.333333 0 0 1-85.333333 85.333333H149.333333zM505.386667 138.24l-2.56 1.024-362.666667 172.693333a21.333333 21.333333 0 0 0-11.989333 16.554667L128 331.221333V874.666667a21.333333 21.333333 0 0 0 18.837333 21.184L149.333333 896h192V661.333333a85.333333 85.333333 0 0 1 85.333334-85.333333h170.666666a85.333333 85.333333 0 0 1 85.333334 85.333333v234.666667h192a21.333333 21.333333 0 0 0 21.184-18.837333L896 874.666667V331.221333a21.333333 21.333333 0 0 0-9.792-17.941333l-2.368-1.322667-362.666667-172.693333a21.333333 21.333333 0 0 0-15.786666-1.024zM597.333333 640h-170.666666a21.333333 21.333333 0 0 0-21.184 18.837333L405.333333 661.333333v234.666667h213.333334V661.333333a21.333333 21.333333 0 0 0-18.837334-21.184L597.333333 640z"
-                                fill="#009999" p-id="4890"></path>
-                            </svg>
+                        <li><a pajx-right class="current" href="/comment"> 留言板
+                        </a></li>         
+                        <li><a pajx-right id="home" class="current" href="/">首页
                           </a></li>
-                        <li>⇨
-                        </li>
                       </ul>
+                      <div class="post-content" itemprop="articleBody">
+                        <div id="tcomment"></div>
+                          <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.42/dist/twikoo.all.min.js"></script>
+                          <script>
+                          twikoo.init({
+                            envId: '<%- site.customConfig.twikoo %>', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+                            el: '#tcomment', // 容器元素
+                            // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
+                            // path: location.pathname, // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
+                            // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/twikoojs/twikoo/blob/main/src/client/utils/i18n/index.js
+                          })
+                          </script>
+                      </div>
+                      <!--评论位置-->
                     </article>
                     <!-- 文章end -->
-                    <% if (commentSetting.showComment) { %>
-                      <% if (commentSetting.commentPlatform === 'gitalk') { %>
-                        <div id="gitalk-container" data-aos="fade-in"></div>
-                      <% } %>
-        
-                      <% if (commentSetting.commentPlatform === 'disqus') { %>
-                        <div id="disqus_thread" data-aos="fade-in"></div>
-                      <% } %>
-                    <% } %>
                   </div> <!--postbox end-->
                   <!-- 主题内容，请修改以上内容 -->
                   <!-- 右侧进度条 -->
@@ -99,4 +98,5 @@
       <%- include('./_blocks/footer') %>
     </div><!--body-bg end-->
   </body>
+
 </html>
