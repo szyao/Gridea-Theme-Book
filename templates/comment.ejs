@@ -41,11 +41,10 @@
             <!--书签 -->
             <%- include('./_blocks/nav') %>
               <div id="axjx_box">
-                <div id="axjx_box2">
                   <!-- 主题内容，请修改以下内容 -->
                   <div id="postbox">
                     <!-- 文章 -->
-                    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                    <article class="post">
                       <h1 class="post-title" itemprop="name headline">
                         留言板
                       </h1>
@@ -55,18 +54,8 @@
                         <li><a pajx-right id="home" class="current" href="/">首页
                           </a></li>
                       </ul>
-                      <div class="post-content" itemprop="articleBody">
+                      <div class="post-content" >
                         <div id="tcomment"></div>
-                          <script src="https://cdn.jsdelivr.net/npm/twikoo@1.6.42/dist/twikoo.all.min.js"></script>
-                          <script>
-                          twikoo.init({
-                            envId: '<%- site.customConfig.twikoo %>', // 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
-                            el: '#tcomment', // 容器元素
-                            // region: 'ap-guangzhou', // 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；Vercel 环境不填
-                            // path: location.pathname, // 用于区分不同文章的自定义 js 路径，如果您的文章路径不是 location.pathname，需传此参数
-                            // lang: 'zh-CN', // 用于手动设定评论区语言，支持的语言列表 https://github.com/twikoojs/twikoo/blob/main/src/client/utils/i18n/index.js
-                          })
-                          </script>
                       </div>
                       <!--评论位置-->
                     </article>
@@ -88,11 +77,9 @@
                     var img = $(".post-content").find("img");
                     if (img.length > 0) {imgStyle(img);img.click(function () {imgbig(this);});};
                   </script>
-                </div><!--axjx_box2 end-->
               </div><!--axjx_box end-->
               <div class="book-shadow"></div>
           </div><!--book-right end-->
-          
         </div><!--mains end-->
       </div><!--body end-->
       <%- include('./_blocks/footer') %>

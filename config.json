@@ -44,16 +44,23 @@
     },
     {
       "name": "ga",
-      "label": "跟踪 ID",
-      "group": "其他",
+      "label": "google 分析 ID",
+      "group": "其他设置",
       "value": "",
       "type": "input",
       "note": "UA-xxxxxxxxx-x"
     },
     {
+      "name": "vercel",
+      "label": "vercel 分析",
+      "group": "其他设置",
+      "value": true,
+      "type": "switch"
+    },
+    {
       "name": "twikoo",
       "label": "评论：twikoo ID",
-      "group": "其他",
+      "group": "其他设置",
       "value": "",
       "type": "input",
       "note": "例如：https://xxx.vercel.app"
