@@ -12,7 +12,7 @@
   #loading {
     transition: all 1s;
     outline: 0;
-    background: #444 url('/media/img/loading.apng') center no-repeat;
+    background: #302011 url('/media/img/loading.apng') center no-repeat;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -59,8 +59,8 @@
                       <% let years=[]; site.posts.forEach((item)=> { const year = item.date.substring(0, 4); if
                         (!years.includes(year)) { years.push(year); } }); %>
                         <% years.forEach(function(year) { %>
-                          <div class="al_year">
-                            <%- year %>年<br /><span class="al_age">&nbsp;<span>
+                          <div class="year">
+                            <%- year %>年
                           </div>
                           <ul class="al_mon_list">
                             <% site.posts.forEach(function(post) { %>

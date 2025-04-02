@@ -1,9 +1,5 @@
 
-  <% if (site.customConfig.image) { %>
-    <div id="Book-cover"  style="background-image: '<%= site.customConfig.image %>';">
-  <% } else { %>
-    <div id="Book-cover">
-  <% } %>
+  <div id="Book-cover">
   <div class="Book-cover-c"></div>
   <div id="Book-cover-name">
     <%= themeConfig.siteName %>
@@ -33,8 +29,8 @@
           <% let years=[]; site.posts.forEach((item)=> { const year = item.date.substring(0, 4); if
             (!years.includes(year)) { years.push(year); } }); %>
             <% years.forEach(function(year) { %>
-              <div class="al_year">
-                <%- year %>年<br /><span class="al_age">&nbsp;<span>
+              <div class="year">
+                <%- year %>年
               </div>
               <ul class="al_mon_list">
                 <% site.posts.forEach(function(post) { %>

@@ -13,33 +13,21 @@
   <link rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css">
   <script type="text/javascript" src="https://cdn.staticfile.org/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
   <script type="text/javascript" src="https://cdn.staticfile.org/jquery.form/4.2.2/jquery.form.min.js"></script>
-  
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 
   <!-- 本地css和js -->
   <script type="text/javascript" src="/media/js/main.js"></script>    
   <link rel="shortcut icon" href="/media/img/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="<%= themeConfig.domain %>/styles/main.css">
 
-  <% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
-    <% if (commentSetting.commentPlatform === 'gitalk') { %>
-      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-    <% } %>
 
-    <% if (commentSetting.commentPlatform === 'disqus') { %>
-      <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
-    <% } %>
-  <% } %>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-  <!-- Google id  -->
+  <!-- Google analytics  -->
   <% if (site.customConfig.ga) { %>
   <script async src="https://www.googletagmanager.com/gtag/js?id=<%= site.customConfig.ga %>"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', '<%= site.customConfig.ga %>');
   </script>
   <% } %>

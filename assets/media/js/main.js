@@ -1,6 +1,6 @@
 function ismMobile(){
 	var w = $(window).width(); 
-	if(w>768){
+	if(w>1200){
 		return false
 	}else{
 		return true
