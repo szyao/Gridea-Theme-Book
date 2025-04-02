@@ -130,9 +130,9 @@ pre {
 
 blockquote {
 
-	margin: 1em 1.5em;
+	// margin: 1em 1.5em;
 
-	padding-left: 1.5em;
+	padding-left: 0.5em;
 
 	border-left: 4px solid #099;
 
@@ -140,13 +140,13 @@ blockquote {
 
 	margin-right: 0;
 
-	padding-right: 1em;
+	padding-right: 0.5em;
 
 	color: #222;
 
-	padding-top: 1em;
+	padding-top: 0.5em;
 
-	padding-bottom: 1em;
+	padding-bottom: 0.5em;
 
 }
 
@@ -1607,10 +1607,9 @@ z-index: 20;
 .post-content p {
 
 	position: relative;
-	padding: 0em 0 0.5em 0;
+	padding: 0.7em 0 0.7em 0;
 	line-height: 2em;
-	text-indent: 2em;
-
+	// text-indent: 2em;
 }
 .post-content ul {
 	position: relative;
@@ -1758,10 +1757,22 @@ z-index: 20;
 		color: black;
 		font-size: 1.5rem;
 }
+
+
 .post-content 	h2, h3, h4, h5, h6 {
 		margin: 5px 0;
 		color: black;
 		font-size: 1.2rem;
+}
+
+.post-content  h1::before {
+  content: "# ";
+  color: #099;
+}
+
+.post-content  h2::before {
+  content: "## ";
+  color: #099;
 }
 
 .twikoo {
