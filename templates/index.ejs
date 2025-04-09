@@ -40,57 +40,74 @@
           <div id="book-right">
             <!--书签 -->
             <%- include('./_blocks/nav') %>
-            <!-- 主题内容，请修改以下内容 -->
-            <div id="axjx_box">
-              <div id="postbox">
-                <!-- 小屏内容 -->
-                <article class="post">
-                  <h1 class="post-title" itemprop="name headline">
-                    《<%= themeConfig.siteName %>》
-                  </h1>
-                  <ul class="post-meta">
-                    <li><a pajx-right class="current" href="/comment"> 留言板
-                    </a></li>                  
-                    <li><a pajx-right id="home" class="current" href="/">首页
-                      </a></li>
-                  </ul>
-                  <div class="post-content-pages-right">
-                    <div id="archives">
-                      <% let years=[]; site.posts.forEach((item)=> { const year = item.date.substring(0, 4); if
-                        (!years.includes(year)) { years.push(year); } }); %>
-                        <% years.forEach(function(year) { %>
-                          <div class="year">
-                            <%- year %>年
-                          </div>
-                          <ul class="al_mon_list">
-                            <% site.posts.forEach(function(post) { %>
-                              <%if (post.date.indexOf(year) !==-1) { %>
-                                <li><a pajx-right href="<%= post.link %>">
-                                    <%= post.title %>
-                                  </a>
-                                  <span>
-                                    <%= post.date.substring(5, 10)%>
-                                  </span>
-                                </li>
-                                <% }; %>
-                                  <% }); %>
-                          </ul>
-                          <% }); %>
-                    </div>
-                  </div>
-                  <!-- 大屏内容 -->
-                  <div class="site-name">
-                    <div id="logo">
-                      <%- site.customConfig.auther %>
-                    </div>
-                    <p class="description"> -<%- themeConfig.siteDescription %>- </p>
-                  </div>
-                  <!--评论位置-->
-                </article> <!-- article-->
-              </div><!-- postbox-->
-              <!-- 主题内容，请修改以上内容 -->
-            </div><!-- axjx_box-->
-            <div class="book-shadow"></div>
+              <!-- 主题内容，请修改以下内容 -->
+              <div id="axjx_box">
+                <div id="postbox">
+                  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+                    <h1 class="post-title" itemprop="name headline">
+                      《<%= themeConfig.siteName %>》
+                    </h1>
+                    <ul class="post-meta">
+                      <li><a pajx-right class="current" href="/comment"> 留言板
+                        </a></li>
+                      <li><a pajx-right id="home" class="current" href="/">首页
+                        </a></li>
+                    </ul>
+                    <!-- 大屏内容 -->
+                    <div class="post-content-pages-big">
+                      <div class="post-content" itemprop="articleBody">
+                          <% if (site.customConfig.bing == 'day') { %>
+                            <div class="img_box_mid">
+                              <img src="https://bing.img.run/1920x1080.php" alt="" loading="lazy">
+                              <span class="img_tape img_tape_top"></span>
+                              <span class="img_tape img_tape_buttom"></span>
+                              <span class="img_title"></span>
+                            </div>
+                          <% }  %>
+                          <% if (site.customConfig.bing == 'random') { %>
+                            <div class="img_box_mid">
+                              <img src="https://bing.img.run/rand.php" alt="" loading="lazy">
+                              <span class="img_tape img_tape_top"></span>
+                              <span class="img_tape img_tape_buttom"></span>
+                              <span class="img_title"></span>
+                            </div>
+                          <% }  %>
+                      </div><!-- post-content-->
+                      <div class="site-name">
+                        <div id="logo"><%- site.customConfig.auther %></div>
+                        <p class="description"> -<%- themeConfig.siteDescription %>- </p>
+                      </div><!-- site-name-->
+                    </div><!-- post-content-pages-big-->
+                    <!-- 小屏内容 -->
+                    <div class="post-content-pages-small">
+                      <div id="archives">
+                        <% let years=[]; site.posts.forEach((item)=> { const year = item.date.substring(0, 4); if
+                          (!years.includes(year)) { years.push(year); } }); %>
+                          <% years.forEach(function(year) { %>
+                            <div class="year">
+                              <%- year %>年
+                            </div>
+                            <ul class="al_mon_list">
+                              <% site.posts.forEach(function(post) { %>
+                                <%if (post.date.indexOf(year) !==-1) { %>
+                                  <li><a pajx-right href="<%= post.link %>">
+                                      <%= post.title %>
+                                    </a>
+                                    <span>
+                                      <%= post.date.substring(5, 10)%>
+                                    </span>
+                                  </li>
+                                  <% }; %>
+                                    <% }); %>
+                            </ul>
+                            <% }); %>
+                      </div>
+                    </div><!-- post-content-pages-small-->
+                  </article> <!-- article-->
+                </div><!-- postbox-->
+                <!-- 主题内容，请修改以上内容 -->
+              </div><!-- axjx_box-->
+              <div class="book-shadow"></div>
           </div><!-- book-right-->
           <% if (site.customConfig.open) { %>
             <script>
@@ -100,7 +117,7 @@
               }, openbooktime);
             </script>
             <% } %>
-            <!-- 自动打开 #main-->
+              <!-- 自动打开 #main-->
         </div><!-- mians-->
       </div><!-- body-->
       <!-- end #body -->

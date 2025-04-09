@@ -43,6 +43,27 @@
       "type": "switch"
     },
     {
+      "name": "bing",
+      "label": "bing图片",
+      "group": "封面设置",
+      "value": "none",
+      "type": "select",
+      "options": [
+        {
+          "label": "每日图片",
+          "value": "day"
+        },
+        {
+          "label": "随机图片",
+          "value": "random"
+        },
+        {
+          "label": "无",
+          "value": "none"
+        }
+      ]
+    },
+    {
       "name": "ga",
       "label": "google 分析 ID",
       "group": "其他设置",
